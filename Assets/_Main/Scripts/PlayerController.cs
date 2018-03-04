@@ -31,6 +31,9 @@ public class PlayerController : MonoBehaviour {
         xAxisMovement = Input.GetAxisRaw("Horizontal");
         zAxisMovement = Input.GetAxisRaw("Vertical");
 
+
+
+
         
     }
 
@@ -75,6 +78,41 @@ public class PlayerController : MonoBehaviour {
     //Animating the character
     private void Animate()
     {
+        #region
+        ////Reset to idle animation
+        //animator.SetBool("WalkBack", false);
+        //animator.SetBool("Walk", false);
+        //animator.SetBool("WalkRight", false);
+        //animator.SetBool("WalkLeft", false);
+
+        //if (zAxisMovement != 0)
+        //{
+        //    if ((zAxisMovement < 0 && lookDirection.z > 0) || (zAxisMovement > 0 && lookDirection.z < 0))
+        //    {
+        //        animator.SetBool("WalkBack", true);
+        //    }
+        //    else
+        //    {
+        //        animator.SetBool("Walk", true);
+        //    }
+
+        //}
+        //else
+        //{
+        //    if (xAxisMovement != 0)
+        //    {
+        //        if (xAxisMovement > 0)
+        //        {
+        //            animator.SetBool("WalkRight", true);
+        //        }
+        //        else
+        //        {
+        //            animator.SetBool("WalkLeft", true);
+        //        }
+        //    }
+        //}
+        #endregion 
+
         bool walking = xAxisMovement != 0 || zAxisMovement != 0;
 
         //Reset to idle animation
@@ -94,38 +132,7 @@ public class PlayerController : MonoBehaviour {
 
         }
 
-        ////Reset to idle animation
-        //animator.SetBool("WalkBack", false);
-        //animator.SetBool("Walk", false);
-        //animator.SetBool("WalkRight", false);
-        //animator.SetBool("WalkLeft", false);
-
-        //if (zAxisMovement!= 0)
-        //{
-        //    if ((zAxisMovement < 0 && lookDirection.z > 0) || (zAxisMovement > 0 && lookDirection.z < 0))
-        //    {
-        //        animator.SetBool("WalkBack", true);
-        //    }
-        //    else
-        //    {
-        //        animator.SetBool("Walk", true);
-        //    }
-
-        //}
-        //else
-        //{
-        //    if(xAxisMovement != 0)
-        //    {
-        //        if (xAxisMovement > 0)
-        //        {
-        //            animator.SetBool("WalkRight", true);
-        //        }
-        //        else
-        //        {
-        //            animator.SetBool("WalkLeft", true);
-        //        }
-        //    }
-        //}
+       
     }
 
 

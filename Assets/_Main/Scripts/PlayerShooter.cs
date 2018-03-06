@@ -9,7 +9,7 @@ public class PlayerShooter : MonoBehaviour {
 
     private float timer = 0;
 
-    private void Awake()
+    private void Start()
     {
         weapon.Initialize(weaponHolder);
     }

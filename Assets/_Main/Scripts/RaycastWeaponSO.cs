@@ -13,7 +13,8 @@ public class RaycastWeaponSO : WeaponSO {
     {
         rcShooter = gameObject.GetComponent<RaycastShootTriggerable>();
 
-        rcShooter.fireRate = fireRate;
+        if (rcShooter == null) return;
+
         rcShooter.range = range;
         rcShooter.laserColor = laserColor;
 
@@ -23,9 +24,10 @@ public class RaycastWeaponSO : WeaponSO {
     }
     public override void Fire()
     {
-
-        rcShooter.Fire();
-
+        if (rcShooter != null)
+        {
+            rcShooter.Fire();
+        }
     }
 
 }

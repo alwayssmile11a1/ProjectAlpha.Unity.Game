@@ -6,17 +6,16 @@ using UnityEngine;
 public class RaycastShootTriggerable : MonoBehaviour {
 
     //these variable will be driven by RayCastWeaponSO script
-    [HideInInspector] public float fireRate;
     [HideInInspector] public float range;
     [HideInInspector] public Gradient laserColor;
 
     public Transform startingShootPosition;
 
-    private RaycastHit hit = new RaycastHit();
+    private RaycastHit hit;
     private Ray shootRay = new Ray();
     private int shootableMask;
     private LineRenderer laserRenderer;
-    private WaitForSeconds effectDisplayTime = new WaitForSeconds(0.02f);
+    private WaitForSeconds laserDisplayTime = new WaitForSeconds(0.02f);
 
 
 	// Use this for initialization
@@ -58,7 +57,7 @@ public class RaycastShootTriggerable : MonoBehaviour {
         //setup laser line
         laserRenderer.enabled = true;
 
-        yield return effectDisplayTime;
+        yield return laserDisplayTime;
 
         laserRenderer.enabled = false;
 
